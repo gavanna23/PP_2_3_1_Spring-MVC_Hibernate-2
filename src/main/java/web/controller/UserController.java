@@ -33,13 +33,13 @@ public class UserController {
 
     @DeleteMapping("/delete")
     public String delete
-            (@RequestParam("id") int id) {
+            (@RequestParam("id") long id) {
         userService.deleteUser(id);
         return "redirect:/";
     }
 
     @PatchMapping("/edit")
-    public String edit(@RequestParam("id") int id, User updateUser) {
+    public String edit(@RequestParam("id") long id, User updateUser) {
         userService.updateUser(id, updateUser);
         return "redirect:/";
     }
